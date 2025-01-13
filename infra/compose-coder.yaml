@@ -1,0 +1,11 @@
+networks:
+  coder-in-docker-net-cc445fff-f26c-48c5-ba40-dbf888db342d:
+    external: true
+
+services:
+  database:
+    image: postgres:16.0-alpine3.18
+    env_file:
+      - ../.env.development
+    networks:
+      - coder-in-docker-net-cc445fff-f26c-48c5-ba40-dbf888db342d
